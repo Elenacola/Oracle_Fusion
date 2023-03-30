@@ -1,0 +1,22 @@
+STEPS:
+1. Create the Data set with Bind Parameter.
+Query:
+ SELECT
+   a.po_header_id Po_header,
+   b.po_header_id,
+   b.po_line_id,
+   b.item_id,
+   b.unit_price,
+   b.quantity,
+   b.base_unit_price
+  FROM
+   po_headers_all a,
+   po_lines_all b
+  WHERE
+   a.po_header_id = b.po_header_id
+   AND a.segment1 = '162352' ----(there put a parameters)
+
+2. Create the Independent LOV as per the specified Parameters.
+3. Save the Data Model with all Parameters and LOV's.
+4. Create Template and Layout.
+5. Run the report.
